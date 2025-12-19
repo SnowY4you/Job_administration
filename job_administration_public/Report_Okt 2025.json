@@ -1,0 +1,122 @@
+[
+    {
+        "id": 75,
+        "job_tittle": "IT-tekniker",
+        "company": "Sectra",
+        "city": "Malmö",
+        "date_of_apply": "2025-10-05",
+        "status": "Tests under review",
+        "last_status_update": "2025-10-05",
+        "tags": "second_line"
+    },
+    {
+        "id": 76,
+        "job_tittle": "IT Team Lead",
+        "company": "Combitech",
+        "city": "Norrköping",
+        "date_of_apply": "2025-10-06",
+        "status": "Rejected",
+        "last_status_update": "2025-10-08",
+        "tags": "it_team_lead"
+    },
+    {
+        "id": 77,
+        "job_tittle": "IT-supporttekniker 1st line",
+        "company": "Saab",
+        "city": "Remote",
+        "date_of_apply": "2025-10-12",
+        "status": "Interview 1 Scheduled",
+        "last_status_update": "2025-10-12",
+        "tags": "first_line"
+    },
+    {
+        "id": 78,
+        "job_tittle": "Scrum Master",
+        "company": "Atea",
+        "city": "Remote",
+        "date_of_apply": "2025-10-13",
+        "status": "Interview 1 Scheduled",
+        "last_status_update": "2025-10-23",
+        "tags": "it_team_lead"
+    },
+    {
+        "id": 79,
+        "job_tittle": "Supporttekniker",
+        "company": "Siemens Energy",
+        "city": "Gothenburg",
+        "date_of_apply": "2025-10-15",
+        "status": "Tests under review",
+        "last_status_update": "2025-10-23",
+        "tags": "second_line"
+    },
+    {
+        "id": 80,
+        "job_tittle": "Servicedeskmedarbetare",
+        "company": "Atea",
+        "city": "Gothenburg",
+        "date_of_apply": "2025-10-17",
+        "status": "Tests under review",
+        "last_status_update": "2025-10-22",
+        "tags": "first_line"
+    },
+    {
+        "id": 81,
+        "job_tittle": "Systemtekniker",
+        "company": "Vattenfall",
+        "city": "Malmö",
+        "date_of_apply": "2025-10-17",
+        "status": "Rejected",
+        "last_status_update": "2025-10-27",
+        "tags": "second_line"
+    },
+    {
+        "id": 82,
+        "job_tittle": "Local IT Support",
+        "company": "CGI",
+        "city": "Norrköping",
+        "date_of_apply": "2025-10-22",
+        "status": "Waiting for response",
+        "last_status_update": "2025-10-26",
+        "tags": "on_site_support"
+    },
+    {
+        "id": 83,
+        "job_tittle": "IT Driftchef",
+        "company": "IFS",
+        "city": "Remote",
+        "date_of_apply": "2025-10-25",
+        "status": "Waiting for response",
+        "last_status_update": "2025-10-31",
+        "tags": "it_manager"
+    },
+    {
+        "id": 84,
+        "job_tittle": "Fälttekniker IT",
+        "company": "Skanska IT",
+        "city": "Gothenburg",
+        "date_of_apply": "2025-10-27",
+        "status": "Interview 1 Scheduled",
+        "last_status_update": "2025-11-02",
+        "tags": "on_site_support"
+    },
+    {
+        "id": 85,
+        "job_tittle": "Servicedeskmedarbetare",
+        "company": "Sectra",
+        "city": "Norrköping",
+        "date_of_apply": "2025-10-30",
+        "status": "Interview 1 Scheduled",
+        "last_status_update": "2025-10-31",
+        "tags": "first_line"
+    },
+    {
+        "id": 86,
+        "job_tittle": "IT-tekniker 2nd line",
+        "company": "Ericsson",
+        "city": "Remote",
+        "date_of_apply": "2025-10-31",
+        "status": "Rejected",
+        "last_status_update": "2025-11-01",
+        "tags": "second_line"
+    }
+]

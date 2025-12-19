@@ -1,0 +1,105 @@
+body { font-family: Verdana, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; color: #333; }
+.header-flex { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #106d70; margin-bottom: 20px; }
+.btn-backup { text-decoration: none; background: #797bf4; color: white; padding: 8px 12px; border-radius: 4px; font-weight: bold; }
+
+/* Containers */
+.stats-flex-container {
+    display: flex;          /* lay out children horizontally */
+    gap: 10px;              /* spacing between boxes */
+    justify-content: space-between;
+    /* flex-wrap: wrap;        /* allow wrapping on smaller screens */
+}
+
+.stat-box {
+    flex: 1 1 30%;          /* each box ~30% width, grows/shrinks */
+    min-width: 250px;       /* prevents boxes from getting too tiny */
+    background: #dfd5f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-top: 5px solid #106d70;
+    display: flex;
+    flex-direction: column;
+}
+.hr-new1 { border: none; border-top: 2px solid #1f0e43; margin: 10px 0; }
+
+.export-box {
+    background-color: #f0fdfa;
+}
+.tag-checkbox-container {
+    display: flex;       /* lay out children horizontally */
+    flex-wrap: wrap;     /* allow wrapping to next line if too many */
+    gap: 10px;           /* spacing between tags */
+}
+
+.tag-label {
+    display: flex;       /* keep checkbox + text together */
+    align-items: center;
+    background: #dfd5f4;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Forms */
+.main-form { background: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #ddd; }
+label { display: block; margin-top: 10px; font-weight: bold; }
+input[type="text"], input[type="date"], select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
+.date-row { display: flex; gap: 10px; }
+
+/* Search Area */
+.search-section { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+.search-form { display: flex; gap: 10px; }
+.search-form input { width: 300px; margin: 0; }
+.search-form button { background: #106d70; color: white; padding: 8px 15px; border: none; cursor: pointer; border-radius: 4px; }
+
+/* Job Entry Cards */
+.job-entry { background: #dfd5f4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 8px solid #106d70; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); }
+.job-header-flex { display: flex; justify-content: space-between; align-items: flex-start; }
+.label { font-weight: bold; color: #1f0e43; width: 130px; display: inline-block; }
+
+/* Add Jobb button */
+.btn-submit {
+    background: #d51cd2;
+    color: white;
+    width: 20%;
+    padding: 12px;
+    margin: 20px auto 0; /
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    display: block;
+    text-align: center;
+}
+
+
+/* Delete Button */
+.btn-delete {
+    background: none;
+    border: 1px solid #797bf4;
+    font-size: 1em;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.4s;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Status Update Styling */
+.status-update-form { margin-top: 15px; padding-top: 10px; border-top: 1px dashed #999; display: flex; align-items: flex-end; gap: 10px; }
+.status-update-form select { width: auto; flex-grow: 1; }
+.btn-small-update { background: #d51cd2; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+
+/* Export Buttons */
+.inner-export-form input[type="submit"] { margin-top: 5px; border: none; padding: 7px; color: white; cursor: pointer; border-radius: 4px; font-weight: bold; }
+.btn-json { background: #0a4345; width: 100%; }
+.btn-pdf { background: #106d70; width: 100%; }
+.btn-af { background: #1f0e43; width: 100%; }
+.dashed-hr { border: none; border-top: 1px dashed #ccc; margin: 15px 0; }

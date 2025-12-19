@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="header-flex">
+        <h1>📝 Job Application Tracker</h1>
+        <a href="{{ url_for('backup_db') }}" class="btn-backup">💾 Backup Database</a>
+    </div>
+
+    <h3><i class="fas fa-chart-line" style="color:#2b5a48;"></i> Job Statistics</h3>
+    <div class="stats-flex-container">
+
+        <div class="stat-box">
+            <h3>Totall Jobs Applied</h3>
+            <p class="big-number">{{ total_jobs }}</p>
+            <hr class="hr-new1">
+            <ul class="stat-list">
+                {% for month_year, count in monthly_counts.items() %}
+                <li>{{ month_year }}: {{ count }} st</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="stat-box">
+            <h3>Status distribution</h3>
+            <ul class="stat-list">
+                {% for status, count in status_counts.items() %}
+                <li><strong>{{ status }}:</strong> {{ count }} st</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="stat-box export-box">
+            <h3>🚀 Export & AF-Auto</h3>
+            <form method="POST" class="inner-export-form">
+                <label>JSON Export:</label>
+                <select name="month_selection">
+                    <option value="" disabled selected>Välj månad...</option>
+                    {% for month_year in monthly_counts.keys() %}
+                    <option value="{{ month_year }}">{{ month_year }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" formaction="{{ url_for('monthly_report_json') }}" value="JSON" class="btn-json">
+
+                <hr class="dashed-hr">
+
+                <label>Period (PDF/AF):</label>
+                <div class="date-row">
+                    <input type="date" name="start_date">
+                    <input type="date" name="end_date">
+                </div>
+                <input type="submit" formaction="{{ url_for('render_report') }}" value="📄 PDF" class="btn-pdf">
+                <input type="submit" formaction="{{ url_for('upload_to_af') }}" value="🔗 AF" class="btn-af">
+            </form>
+        </div>
+
+    </div> </div>
+
+    <hr>
+
+    <h2>Add New Application</h2>
+    <form method="POST" class="main-form">
+        <label>Job Title:</label><input type="text" name="job_tittle" required>
+        <label>Company:</label><input type="text" name="company" required>
+        <div class="date-row">
+            <div style="flex:1"><label>City:</label><input type="text" name="city"></div>
+            <div style="flex:1"><label>Date:</label><input type="date" name="date_of_apply" required></div>
+        </div>
+        <label>Tags:</label>
+        <div class="tag-checkbox-container">
+            {% for tag in tag_options %}
+            <label class="tag-label"><input type="checkbox" name="tags" value="{{ tag }}"> {{ tag|capitalize }}</label>
+            {% endfor %}
+        </div>
+        <input type="submit" value="Add Job" class="btn-submit">
+    </form>
+
+    <div class="search-section">
+        <h2>Tracked Applications</h2>
+        <form action="{{ url_for('index') }}" method="GET" class="search-form">
+            <input type="text" name="search" placeholder="Search on Job Title or Company name..." value="{{ search_query }}">
+            <button type="submit">Search</button>
+            {% if search_query %}<a href="{{ url_for('index') }}" class="clear-search">Clear</a>{% endif %}
+        </form>
+    </div>
+
+    {% for job in jobs %}
+    <div class="job-entry">
+        <div class="job-header-flex">
+            <div class="job-info">
+                <p><span class="label">Job Title:</span> <strong>{{ job.job_tittle }}</strong></p>
+                <p><span class="label">Company:</span> {{ job.company }}</p>
+                <p><span class="label">City:</span> {{ job.city }}</p>
+                <p><span class="label">Date Applied:</span> {{ job.date_of_apply }} ({{ job.time_waiting }})</p>
+                <p><span class="label">Status:</span> <span class="status-tag">{{ job.status }}</span></p>
+                <p><span class="label">Tags:</span> <span class="tags-display">{{ job.tags }}</span></p>
+            </div>
+
+            <form action="{{ url_for('delete_job', job_id=job.id) }}" method="POST" onsubmit="return confirm('Är du säker?');">
+                <button class="btn-delete"><i class="fas fa-trash" style="color:#853636;"></i></button>
+            </form>
+        </div>
+
+        <form method="POST" action="{{ url_for('update_status', job_id=job.id) }}" class="status-update-form">
+            <label>Change Status:</label>
+            <select name="status">
+                <option value="{{ job.status }}">{{ job.status }} (Current)</option>
+                <option value="Waiting for response">Waiting for response</option>
+                <option value="Interview 1 Scheduled">Interview 1 Scheduled</option>
+                <option value="Tests under review">Tests under review</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+            <input type="submit" value="Update" class="btn-small-update">
+        </form>
+    </div>
+    {% endfor %}
+
+    {% if not jobs %}<p style="text-align:center; color:#666;">Inga jobb hittades.</p>{% endif %}
+</body>
+</html>

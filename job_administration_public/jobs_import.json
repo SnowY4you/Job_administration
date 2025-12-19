@@ -1,0 +1,29 @@
+[
+    {
+        "job_tittle": "Systemingenjör",
+        "company": "InfraCom",
+        "city": "Göteborg",
+        "date_of_apply": "2025-12-01",
+        "status": "Applied",
+        "last_status_update": "",
+        "tags": "second_line"
+    },
+    {
+        "job_tittle": "IT-tekniker 2nd line",
+        "company": "Ericsson",
+        "city": "Linköping",
+        "date_of_apply": "2025-11-28",
+        "status": "Applied",
+        "last_status_update": "",
+        "tags": "second_line"
+    },
+    {
+        "job_tittle": "Process Specialist",
+        "company": "Sectra",
+        "city": "Linköping",
+        "date_of_apply": "2025-11-29",
+        "status": "Applied",
+        "last_status_update": "",
+        "tags": "it_service_specialist"
+    }
+]
